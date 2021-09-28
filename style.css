@@ -1,0 +1,12 @@
+
+.btn{
+    background-color: beige;
+    text-align: center;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.btn>span {
+    position: relative;
+    top: 1rem;
+
+}

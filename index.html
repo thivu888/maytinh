@@ -5,32 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <title>Máy tính</title>
 </head>
 <body>
-    <div class="w-96 mx-auto mt-10 ">
-       <div class="screen bg-black h-16">
-
+    <div class="w-96 mx-auto mt-10 h-96 pt-2 pl-2 pr-2 bg-black main rounded-lg">
+       <div class="screen bg-black h-28 p-2 min-w-full">
+           <div class="text-white min-w-full" id="request">
+            </div>
+            <div class="text-right text-white min-w-full" id="response">
+            </div>
        </div>
-       <div class="grid grid-cols-4 gap-4 ">
-           <div class="btn-delete">Del</div>
-           <div class="btn-remove">AC</div>
-           <div class="btn-add">+</div>
-           <div class="btn-sub">-</div>
-           <div class="btn-mul">*</div>
-           <div class="divide">/</div>
-           <div class="enter">=</div>
-           <div class="nine">9</div>
-           <div class="eight">8</div>
-           <div class="seven">7</div>
-           <div class="six">6</div>
-           <div class="five">5</div>
-           <div class="four">4</div>
-           <div class="three">3</div>
-           <div class="two">2</div>
-           <div class="one">1</div>
-           <div class="zero">0</div>
+       <div class="grid grid-cols-5 gap-2 grid-rows-5 h-5/6">
+           <div class="btn"><span>7</span></div>
+           <div class="btn"><span>8</span></div>
+           <div class="btn"><span>9</span></div>
+           <div class="btn"><span>DEL</span></div>
+           <div class="btn"><span>AC</span></div>
+           <div class="btn"><span>4</span></div>
+           <div class="btn"><span>5</span></div>
+           <div class="btn"><span>6</span></div>
+           <div class="btn"><span>x</span></div>
+           <div class="btn"><span>/</span></div>
+           <div class="btn"><span>1</span></div>
+           <div class="btn"><span>2</span></div>
+           <div class="btn"><span>3</span></div>
+           <div class="btn"><span>+</span></div>
+           <div class="btn"><span>-</span></div>
+           <div class="btn"><span>0</span></div>
+           <div class="btn"><span>.</span></div>
+           <div class="btn"><span>Ans</span></div>
+           <div class="btn col-start-4 col-end-6"><span>=</span></div>
        </div>
     </div>
+
+    <script src="main.js"></script>
 </body>
 </html>
