@@ -15,4 +15,13 @@
     position: relative;
     top: 1rem;
     font-weight: 500;
+    user-select: none;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+.btn:active{
+    opacity: 0.5;
 }

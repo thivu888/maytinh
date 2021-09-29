@@ -1,5 +1,16 @@
 
 //xu ly theo jquery
+// nhap bang ban phim
+$('body').on('keypress',function(e){
+     const regex=/[0-9+/*-]/gi
+    if(regex.test(e.key)){
+        $("#request").html($("#request").html()+e.key)
+    }
+    if(e.key=="Enter"){
+        $("#response").html(eval($("#request").html()))
+        localStorage.setItem('rememberResult',$("#response").html())        
+    }
+})
 
 $('.btn').on('click', function() {
     if($(this).children().html()=="AC"){
@@ -8,17 +19,17 @@ $('.btn').on('click', function() {
     }else if($(this).children().html()=="DEL"){
         $("#request").html($("#request").html().slice(0,$("#request").html().length-1))
     }else if($(this).children().html()=="="){
-        if($("#request").html()!='Ans'){
+        if($("#request").html().includes('Ans')){
+            if(localStorage.getItem("rememberResult")){
+                $("#request").html($("#request").html().replace(/Ans/gi,localStorage.getItem("rememberResult")))
+            }
+            else{
+                $("#request").html().replace(/Ans/gi,0)
+            }
+            
+        }
             $("#response").html(eval($("#request").html()))
             localStorage.setItem('rememberResult',$("#response").html())
-        }else{
-            if(localStorage.getItem('rememberResult')){
-             $("#response").html(localStorage.getItem('rememberResult'))
-            }else{
-                $("#response").html('0')
-                $("#request").html("")
-            }
-        }
     }
     else{
         $("#request").html($("#request").html()+$(this).children().html()) 
@@ -28,7 +39,7 @@ $('.btn').on('click', function() {
 
 // hàm xử lí logic theo kieu trung to ->hau to -> ket qua
 // const handle=(str)=>{
-//     const regex=/[+/*-]/gi
+    // const regex=/[+/*-]/gi
 //     let stack=[];
 //     let postFix=[];
 //     let tempArr=str.split("");
